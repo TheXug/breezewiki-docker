@@ -1,0 +1,13 @@
+# Example config.ini for BreezeWiki
+# Full reference: https://docs.breezewiki.com/Configuration.html
+#
+# Only used if you mount this file to /breezewiki/config.ini in the container.
+# Anything set here is overridden by a matching bw_* environment variable.
+
+bind_host = auto
+port = 10416
+canonical_origin = https://wiki.yourdomain.com
+debug = false
+feature_search_suggestions = true
+log_outgoing = true
+strict_proxy = false

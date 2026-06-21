@@ -1,0 +1,27 @@
+services:
+  breezewiki:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BREEZEWIKI_REF: main     # or a pinned commit hash
+    image: breezewiki:local
+    container_name: breezewiki
+    restart: unless-stopped
+    ports:
+      - "10416:10416"
+    environment:
+      # Required — Compose will refuse to start if this isn't set, rather
+      # than silently deploying with a placeholder. Pass it inline on the
+      # CLI, or set it via Portainer's "Environment variables" field for
+      # Git-based stacks, see README.
+      - bw_canonical_origin=${BW_CANONICAL_ORIGIN:?Set BW_CANONICAL_ORIGIN to your instance's public URL, e.g. https://wiki.yourdomain.com}
+      # - bw_debug=false
+      # - bw_feature_search_suggestions=true
+      # - bw_log_outgoing=true
+      # - bw_strict_proxy=false
+
+    # Alternative to env vars: mount a config.ini instead (uncomment both lines,
+    # and remove/comment the environment block above if you'd rather use a file)
+    # volumes:
+    #   - ./config.ini:/breezewiki/config.ini:ro
