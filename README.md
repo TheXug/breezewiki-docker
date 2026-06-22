@@ -7,19 +7,8 @@ ship an official Docker image, so this builds it on top of the official
 
 ## Deploying with Portainer
 
-1. Add a stack and select Repository as the build method
-2. Enter `https://github.com/TheXug/breezewiki-docker` as the Repository URL and leave the compose
-   path as `docker-compose.yml`
-3. Add an environment variable
-   - Name: `BW_CANONICAL_ORIGIN`
-   - Value: the public URL people (or you) will use to reach this instance, e.g.
-     `https://wiki.yourdomain.com`
-4. Deploy the stack
-
-Use the **Repository** method rather than **Web editor**: this stack builds
-the image from the `Dockerfile` in the repo (it doesn't pull a prebuilt
-image), so Portainer needs the rest of the repo checked out alongside the
-compose file for the build to work.
+Use `portainer.yml` as your Docker compose template for Portainer's web editor. Make sure you replace
+the example domain with whatever the url is (including https://).
 
 To update later, redeploy the stack from Portainer (it'll pull the latest
 commit from the branch and rebuild, since this uses `build:` rather than a
@@ -27,9 +16,6 @@ fixed image tag). See [Updating](#updating) below for pinning a specific
 version instead of always tracking `main`.
 
 Ensure that, if you use a reverse proxy, it is on the same network as your BreezeWiki stack.
-You can do this by remaking the stack with the web editor, copying the contents of
-`docker-compose.yml`, adding the `BW_CANONICAL_ORIGIN` environment variable, and adding
-your network configuration.
 
 ## Docker / Docker Compose
 
