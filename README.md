@@ -16,20 +16,20 @@ ship an official Docker image, so this builds it on top of the official
      `https://wiki.yourdomain.com`
 4. Deploy the stack
 
-Portainer clones the repo and runs `docker-compose.yml` as-is, substituting
-`BW_CANONICAL_ORIGIN` from what you entered in step 3. This is required since we're building from
-source and we want to avoid 
-
 Use the **Repository** method rather than **Web editor**: this stack builds
 the image from the `Dockerfile` in the repo (it doesn't pull a prebuilt
 image), so Portainer needs the rest of the repo checked out alongside the
 compose file for the build to work.
 
-
 To update later, redeploy the stack from Portainer (it'll pull the latest
 commit from the branch and rebuild, since this uses `build:` rather than a
 fixed image tag). See [Updating](#updating) below for pinning a specific
 version instead of always tracking `main`.
+
+Ensure that, if you use a reverse proxy, it is on the same network as your BreezeWiki stack.
+You can do this by making the stack a manual docker compose, copying the contents of
+`docker-compose.yml`, adding the `BW_CANONICAL_ORIGIN` environment variable, and adding
+your network configuration.
 
 ## Docker / Docker Compose
 
