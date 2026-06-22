@@ -23,7 +23,7 @@ Ensure that, if you use a reverse proxy, it is on the same network as your Breez
 ### Docker Compose
 
 ```bash
-git clone https://github.com/<you>/breezewiki-docker.git
+git clone https://github.com/thexug/breezewiki-docker.git
 cd breezewiki-docker
 BW_CANONICAL_ORIGIN=https://wiki.yourdomain.com docker compose up -d --build
 ```
