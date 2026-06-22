@@ -27,7 +27,7 @@ fixed image tag). See [Updating](#updating) below for pinning a specific
 version instead of always tracking `main`.
 
 Ensure that, if you use a reverse proxy, it is on the same network as your BreezeWiki stack.
-You can do this by making the stack a manual docker compose, copying the contents of
+You can do this by remaking the stack with the web editor, copying the contents of
 `docker-compose.yml`, adding the `BW_CANONICAL_ORIGIN` environment variable, and adding
 your network configuration.
 
