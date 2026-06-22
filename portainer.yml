@@ -1,0 +1,20 @@
+services:
+  breezewiki:
+    build:
+      context: https://github.com/thexug/breezewiki-docker.git
+      dockerfile: Dockerfile
+      args:
+        BREEZEWIKI_REF: main
+    image: breezewiki:local
+    container_name: breezewiki
+    restart: unless-stopped
+    ports:
+      - "10416:10416"
+    environment:
+      - bw_canonical_origin=https://wiki.yourdomain.com
+    networks:
+      - your-network
+
+networks:
+  your-network:
+    external: true
