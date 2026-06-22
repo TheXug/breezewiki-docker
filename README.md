@@ -159,6 +159,7 @@ on the CLI.
   rather than here. An existing community image is also available at
   [PussTheCat-org/docker-breezewiki-quay](https://github.com/PussTheCat-org/docker-breezewiki-quay),
   worth comparing against.
+- If [Phantom](https://codeberg.org/phantom-org/phantom) becomes more stable and loved as much as BreezeWiki, I will definitely make a version for that.
 
 ## License
 
